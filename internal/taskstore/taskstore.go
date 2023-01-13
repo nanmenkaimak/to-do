@@ -55,9 +55,9 @@ func (ts *TaskStore) GetTask(id int) (Task, error) {
 	task, ok := ts.tasks[id]
 	if ok {
 		return task, nil
-	} else {
-		return Task{}, fmt.Errorf("task with id=%d not found", id)
 	}
+
+	return Task{}, fmt.Errorf("task with id=%d not found", id)
 }
 
 // DeleteTask deletes the task with the given id. If no such id exists, an error
